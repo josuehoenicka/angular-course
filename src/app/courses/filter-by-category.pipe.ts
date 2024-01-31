@@ -1,19 +1,14 @@
-import {Pipe, PipeTransform} from '@angular/core';
-import {Course} from '../model/course';
-
+import { Pipe, PipeTransform } from "@angular/core";
+import { Course } from "../model/course";
 
 @Pipe({
-    name: 'filterByCategory',
-    standalone: true
+  name: "filterByCategory",
+  standalone: true,
 })
 export class FilterByCategoryPipe implements PipeTransform {
+  transform(courses: Course[], category: string) {
+    console.log("Called transform()");
 
-
-    transform(courses: Course[], category:string) {
-
-        console.log('Called transform()');
-
-        return courses.filter(course => course.category === category);
-    }
-
+    return courses.filter((course) => course.category === category);
+  }
 }
